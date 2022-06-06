@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class App extends Component {
   state = { stories: []};
   componentDidMount() {
-    fetch("http://localhost:3001/topstories")
+    fetch(`${document.location.origin}/topstories`)
     .then(response => response.json())
     .then(json => this.setState({ stories: json}))
     .catch(eror => alert(erorr.message));
